@@ -1,5 +1,5 @@
 import { getSortedPostData } from '../lib/posts'
-
+import LayoutBody from '../src/layoutBody'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostData()
@@ -11,14 +11,14 @@ export async function getStaticProps() {
 }
 
 export default function Blog({ allPostsData }) {
-  debugger
   return (
+    <LayoutBody>
     <div>
         <ul >
           {allPostsData.map(({ id, content,date, title }) => (
             <li key={id}>
               {title}
-              <br />
+              <br/>
               {id}
               <br />
               {date}
@@ -28,5 +28,6 @@ export default function Blog({ allPostsData }) {
           ))}
         </ul>
     </div>
+    </LayoutBody>
   )
 }
