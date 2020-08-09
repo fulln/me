@@ -7,9 +7,9 @@
 
 ### 目前需要新增的功能
 
-- [x] blog页面的实现
-- 实现markdown转html
-- 评论功能
-- 搜索功能
+✅ blog页面的实现
+- [x] 实现markdown转html
+- [x] 评论功能
+- [x] 搜索功能
 
 *fulln.me* 前端项目的重构！！！
