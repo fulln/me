@@ -1,5 +1,10 @@
 import { getSortedPostData } from '../lib/posts'
 import LayoutBody from '../src/layoutBody'
+import moment from 'moment';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+
+
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostData()
@@ -13,21 +18,21 @@ export async function getStaticProps() {
 export default function Blog({ allPostsData }) {
   return (
     <LayoutBody>
-    <div>
-        <ul >
-          {allPostsData.map(({ id, content,date, title }) => (
-            <li key={id}>
+      <Typography component="div">
+        {allPostsData.map(({ id, content, date, title }) => (
+          <Box key={id}>
+            <Box fontWeight="fontWeightBold" textAlign="center" lineHeight={2}  fontSize={24}>
               {title}
-              <br/>
-              {id}
-              <br />
-              {date}
-              <br/>
-              {content}    
-            </li>            
-          ))}
-        </ul>
-    </div>
+            </Box>            
+            <Box textAlign="right"  lineHeight={2}>
+              {moment(date).format('YYYY-MM-DD')}          
+            </Box>
+            <Box textAlign="justify" >
+              {content}
+            </Box>
+          </Box>
+        ))}
+      </Typography>
     </LayoutBody>
   )
 }

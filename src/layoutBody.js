@@ -6,8 +6,7 @@ import Link from './Link';
 import Copyright from './Copyright';
 import FullWidthTabs  from './Header.js'
 
-const LayoutBody = (props) => (
-    
+const LayoutBody = (props) => (  
         <Container maxWidth="sm">
           <Box my={4}>
             <Typography variant="h4" component="h1" gutterBottom>
